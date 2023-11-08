@@ -27,3 +27,10 @@ appraise "rails_7.0" do
   gem "activerecord-jdbcsqlite3-adapter", "~> 70.0", platform: :jruby
   gem "sqlite3", "~> 1.4.0", platform: :ruby
 end
+
+appraise "rails_7.1" do
+  # Remove `git:` after `rails-7.1.2` is released
+  gem "rails", "~> 7.1.0", git: 'https://github.com/rails/rails.git', branch: "7-1-stable"
+  gem "activerecord-jdbcsqlite3-adapter", "~> 70.0", platform: :jruby
+  gem "sqlite3", "~> 1.4", platform: :ruby
+end

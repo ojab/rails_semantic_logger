@@ -46,7 +46,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
 
         assert_semantic_logger_event(
           messages[2],
-          message: "Rendering",
+          message: Gem::Version.new(Rails.version) >= "7.1" ? "  Rendering text template" : "Rendering",
           name:    "ActionView",
           level:   :debug,
           payload: {

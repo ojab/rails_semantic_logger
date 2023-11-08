@@ -4,7 +4,8 @@ module ActiveSupport
   # More hacks to try and stop Rails from being it's own worst enemy.
   class Logger
     class << self
-      undef :logger_outputs_to?, :broadcast
+      undef_method(:logger_outputs_to?)
+      undef_method(:broadcast) if method_defined?(:broadcast)
     end
 
     # Prevent Console from trying to merge loggers
